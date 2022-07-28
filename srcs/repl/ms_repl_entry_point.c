@@ -6,7 +6,7 @@
 /*   By: nmathieu <nmathieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:25:13 by nmathieu          #+#    #+#             */
-/*   Updated: 2022/07/28 10:51:21 by nmathieu         ###   ########.fr       */
+/*   Updated: 2022/07/28 16:18:17 by pducos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ bool	ms_repl_entry_point(void)
 		if (ret == -1)
 			return (clear_history(), ms_repl_engine_deinit(&engine), false);
 		ms_sigset_command();
+		// ms_ast_show(ast);
 		ms_execute_ast(ast);
 		ms_sigset_prompt();
 		ms_ast_free(ast);
